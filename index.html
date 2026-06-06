@@ -5,1068 +5,969 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dara dos Santos | Atención al cliente, comercio y estética en Barcelona</title>
   <meta name="description" content="Currículum online de Dara dos Santos, perfil profesional en atención al cliente, comercio, estética y trabajo temporal en Barcelona." />
-  <meta name="keywords" content="Dara dos Santos, atención al cliente, comercio, estética, Barcelona, trabajo, turno tarde, turno noche" />
-  <meta property="og:title" content="Dara dos Santos | Atención al cliente, comercio y estética en Barcelona" />
-  <meta property="og:description" content="Currículum online de Dara dos Santos, perfil profesional en atención al cliente, comercio, estética y trabajo temporal en Barcelona." />
+  <meta property="og:title" content="Dara dos Santos | Perfil profesional — Barcelona" />
+  <meta property="og:description" content="Currículum online de Dara dos Santos. Disponibilidad inmediata para turno tarde/noche en Barcelona." />
   <meta property="og:type" content="website" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ── RESET & BASE ── */
+    /* ─── RESET ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; }
 
+    /* ─── TOKENS ─── */
     :root {
-      --cream:      #FAF8F5;
-      --white:      #FFFFFF;
-      --rose:       #C9A0A0;
-      --rose-light: #E8D5D5;
-      --rose-dark:  #A07070;
-      --nude:       #D4B8A8;
-      --beige:      #F0E8E0;
-      --text:       #1C1C1C;
-      --text-mid:   #5A5A5A;
-      --text-light: #9A9A9A;
-      --border:     #E8E0D8;
-      --shadow:     0 4px 24px rgba(0,0,0,.07);
-      --shadow-lg:  0 12px 48px rgba(0,0,0,.10);
+      --bg:         #F5F3EF;
+      --surface:    #FFFFFF;
+      --ink:        #18171A;
+      --ink-mid:    #4A4850;
+      --ink-light:  #8E8C96;
+      --accent:     #8C5E58;          /* terracotta discreto */
+      --accent-lt:  #D4B0AC;
+      --accent-bg:  #F0E8E6;
+      --line:       #E2DDD8;
+      --font-serif: 'Cormorant', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+      --ease:       cubic-bezier(.25,.46,.45,.94);
     }
 
     body {
-      background: var(--cream);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
       font-weight: 300;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-
-    /* ── NAV ── */
+    /* ─── NAV ─── */
     nav {
       position: fixed;
       inset: 0 0 auto;
-      z-index: 200;
-      background: rgba(250,248,245,0);
-      backdrop-filter: blur(0px);
-      transition: background .4s, backdrop-filter .4s, box-shadow .4s;
-      padding: 0 5vw;
-      height: 64px;
+      z-index: 100;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 max(2rem, 5vw);
+      background: transparent;
+      transition: background .35s var(--ease), box-shadow .35s var(--ease);
     }
-    nav.scrolled {
-      background: rgba(250,248,245,.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 var(--border);
+    nav.up {
+      background: rgba(245,243,239,.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 var(--line);
     }
-    .nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
       font-weight: 400;
-      letter-spacing: .04em;
-      color: var(--text);
+      letter-spacing: .06em;
+      color: var(--ink);
     }
-    .nav-brand span { color: var(--rose-dark); }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: .78rem;
+    .nav-logo b { font-weight: 400; color: var(--accent); font-style: italic; }
+    .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-menu a {
+      font-size: .72rem;
       font-weight: 400;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--text-mid);
-      transition: color .25s;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: color .2s;
     }
-    .nav-links a:hover { color: var(--rose-dark); }
-    .nav-cta {
-      display: none;
+    .nav-menu a:hover { color: var(--accent); }
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .45rem 1.1rem;
+      background: var(--ink);
+      color: #fff !important;
+      font-size: .68rem !important;
+      letter-spacing: .1em !important;
+      text-transform: uppercase !important;
+      transition: background .2s !important;
     }
-    @media (min-width: 768px) {
-      .nav-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: .5rem;
-        padding: .5rem 1.2rem;
-        background: var(--rose);
-        color: #fff !important;
-        font-size: .72rem !important;
-        letter-spacing: .12em !important;
-        border-radius: 50px;
-        transition: background .25s !important;
-      }
-      .nav-cta:hover { background: var(--rose-dark) !important; color: #fff; }
-    }
+    .nav-pill:hover { background: var(--accent) !important; }
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     #hero {
       min-height: 100svh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 80px 5vw 0;
-      gap: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,160,160,.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    #hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,184,168,.12) 0%, transparent 70%);
-      pointer-events: none;
+      padding-top: 60px;
     }
 
-    .hero-text { position: relative; z-index: 2; }
-    .hero-badge {
-      display: inline-flex;
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6rem max(2rem, 5vw) 5rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-eyebrow {
+      display: flex;
       align-items: center;
-      gap: .5rem;
-      padding: .35rem 1rem;
-      background: var(--beige);
-      border: 1px solid var(--rose-light);
-      border-radius: 50px;
-      font-size: .72rem;
+      gap: .75rem;
+      font-size: .68rem;
       font-weight: 400;
-      letter-spacing: .1em;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--rose-dark);
-      margin-bottom: 1.8rem;
+      color: var(--ink-light);
+      margin-bottom: 2rem;
     }
-    .hero-badge::before {
-      content: '';
-      width: 7px; height: 7px;
+    .hero-dot {
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: #6cc17a;
-      flex-shrink: 0;
+      background: #5DA66E;
     }
+
     .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 400;
-      line-height: 1.08;
-      margin-bottom: .6rem;
-      color: var(--text);
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+      font-weight: 300;
+      line-height: .95;
+      letter-spacing: -.01em;
+      margin-bottom: 2rem;
     }
-    .hero-name em {
+    .hero-name span {
       display: block;
       font-style: italic;
-      color: var(--rose-dark);
+      color: var(--accent);
     }
-    .hero-headline {
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      font-weight: 500;
-      color: var(--text-mid);
-      margin-bottom: 1.2rem;
-      line-height: 1.4;
-    }
-    .hero-sub {
-      font-size: .92rem;
-      color: var(--text-light);
+
+    .hero-desc {
+      font-size: .9rem;
+      color: var(--ink-mid);
+      max-width: 400px;
       line-height: 1.75;
-      max-width: 460px;
       margin-bottom: 2.5rem;
+      border-left: 2px solid var(--accent-lt);
+      padding-left: 1.2rem;
     }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .9rem;
-    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: .55rem;
-      padding: .85rem 1.8rem;
-      border-radius: 50px;
-      font-size: .82rem;
-      font-weight: 500;
-      letter-spacing: .04em;
+      padding: .75rem 1.6rem;
+      font-family: var(--font-sans);
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
       cursor: pointer;
-      transition: transform .2s, box-shadow .2s, background .25s;
+      text-decoration: none;
+      transition: background .22s, color .22s, box-shadow .22s, transform .15s;
       white-space: nowrap;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-    .btn-primary {
-      background: var(--rose);
-      color: #fff;
       border: none;
     }
-    .btn-primary:hover { background: var(--rose-dark); }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--rose); color: var(--rose-dark); }
-    .btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-      border: none;
-    }
-    .btn-whatsapp:hover { background: #1ebe5d; }
-    .btn svg { width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
-    /* Hero image */
-    .hero-image {
+    .btn-dark  { background: var(--ink);   color: #fff; }
+    .btn-dark:hover  { background: #000; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+
+    .btn-wa    { background: #1FAD53; color: #fff; }
+    .btn-wa:hover  { background: #178f44; box-shadow: 0 6px 20px rgba(31,173,83,.3); }
+
+    .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    .btn-accent { background: var(--accent); color: #fff; }
+    .btn-accent:hover { background: #7a514c; box-shadow: 0 6px 20px rgba(140,94,88,.3); }
+
+    /* Hero right = photo */
+    .hero-right {
       position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      height: calc(100svh - 80px);
+      overflow: hidden;
+      background: var(--accent-bg);
     }
-    .hero-img-wrap {
-      position: relative;
-      width: min(380px, 40vw);
-      height: min(520px, 70vh);
-    }
-    .hero-img-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--rose-light);
-      border-radius: 200px 200px 160px 160px;
-      z-index: 0;
-    }
-    .hero-img-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 8px;
-      border: 1.5px solid rgba(201,160,160,.4);
-      border-radius: 195px 195px 155px 155px;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .hero-img-wrap img {
-      position: relative;
-      z-index: 1;
+    .hero-photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      border-radius: 200px 200px 160px 160px;
+      display: block;
+      filter: grayscale(8%);
     }
-    .hero-img-placeholder {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      border-radius: 200px 200px 160px 160px;
-      background: var(--beige);
+    .hero-right-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(245,243,239,.25) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-meta-strip {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: .8rem;
-      color: var(--text-light);
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .hero-img-placeholder svg { opacity: .3; width: 48px; height: 48px; }
-
-    /* Floating chips */
-    .hero-chip {
-      position: absolute;
-      background: var(--white);
-      border-radius: 12px;
-      padding: .7rem 1.1rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
       gap: .6rem;
-      font-size: .76rem;
-      font-weight: 500;
-      white-space: nowrap;
-      z-index: 3;
+      align-items: flex-end;
     }
-    .hero-chip .chip-icon { font-size: 1.1rem; }
-    .hero-chip-1 { top: 18%; right: -10%; }
-    .hero-chip-2 { bottom: 20%; left: -12%; }
-
-    /* ── SECTIONS BASE ── */
-    section { padding: 6rem 5vw; }
-    .section-tag {
-      display: inline-block;
-      font-size: .68rem;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 1rem;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(8px);
+      font-size: .72rem;
       font-weight: 400;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      letter-spacing: .06em;
+      color: var(--ink);
     }
-    .section-title em { font-style: italic; color: var(--rose-dark); }
-    .section-desc {
-      font-size: .95rem;
-      color: var(--text-mid);
-      max-width: 540px;
-      line-height: 1.8;
-    }
-    .divider {
-      width: 40px; height: 2px;
-      background: var(--rose);
-      border-radius: 2px;
-      margin: 1.2rem 0 2.5rem;
-    }
+    .hero-chip svg { width: 13px; height: 13px; fill: var(--accent); flex-shrink: 0; }
 
-    /* ── ABOUT ── */
+    /* ─── SECTION BASE ─── */
+    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 max(2rem, 5vw); }
+
+    .section-label {
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .9rem;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    .section-heading em { font-style: italic; color: var(--accent); }
+    .rule { width: 36px; height: 1px; background: var(--accent); margin: 1.4rem 0 2.5rem; }
+
+    /* ─── ABOUT ─── */
     #about {
-      background: var(--white);
+      padding: 7rem 0;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr 1.8fr;
       gap: 5rem;
-      align-items: center;
-      margin-top: 3rem;
+      align-items: start;
+      margin-top: 3.5rem;
     }
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .about-kpis { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--line); }
+    .kpi {
+      padding: 1.4rem 1.6rem;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: baseline;
+      gap: .8rem;
     }
-    .stat-card {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: box-shadow .3s;
-    }
-    .stat-card:hover { box-shadow: var(--shadow); }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
+    .kpi:last-child { border-bottom: none; }
+    .kpi-num {
+      font-family: var(--font-serif);
       font-size: 2.2rem;
-      font-weight: 400;
-      color: var(--rose-dark);
+      font-weight: 300;
+      color: var(--accent);
       line-height: 1;
-      margin-bottom: .3rem;
+      flex-shrink: 0;
     }
-    .stat-lbl {
-      font-size: .68rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-light);
-    }
-    .about-text p {
-      font-size: .95rem;
-      color: var(--text-mid);
+    .kpi-lbl { font-size: .78rem; color: var(--ink-light); line-height: 1.3; }
+
+    .about-body p {
+      font-size: .92rem;
+      color: var(--ink-mid);
       line-height: 1.85;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
-    .about-tags {
+    .about-body p:last-of-type { margin-bottom: 0; }
+    .about-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: .6rem;
-      margin-top: 1.8rem;
+      gap: .5rem;
+      margin-top: 2rem;
     }
-    .tag {
-      padding: .4rem 1rem;
-      background: var(--beige);
-      border: 1px solid var(--rose-light);
-      border-radius: 50px;
-      font-size: .72rem;
+    .chip {
+      padding: .35rem .9rem;
+      font-size: .68rem;
       font-weight: 400;
-      color: var(--rose-dark);
+      letter-spacing: .06em;
+      color: var(--ink-mid);
+      border: 1px solid var(--line);
+      background: var(--bg);
+      transition: border-color .2s, color .2s;
     }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── EXPERIENCE ── */
-    #experiencia { background: var(--cream); }
-    .exp-grid {
+    /* ─── EXPERIENCE ─── */
+    #experiencia { padding: 7rem 0; }
+    .exp-list { margin-top: 3.5rem; border-top: 1px solid var(--line); }
+    .exp-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: background .2s;
     }
-    .exp-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: box-shadow .3s, transform .3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .exp-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(to right, var(--rose), var(--nude));
-    }
-    .exp-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-    .exp-emoji { font-size: 2rem; margin-bottom: 1.2rem; }
-    .exp-type {
-      font-size: .65rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
-      font-weight: 500;
-      margin-bottom: .5rem;
-    }
-    .exp-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+    .exp-row:hover { background: rgba(255,255,255,.5); }
+    .exp-meta {}
+    .exp-duration {
+      font-size: .7rem;
       font-weight: 400;
-      margin-bottom: .3rem;
-      line-height: 1.2;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: .6rem;
     }
-    .exp-dur {
-      font-size: .72rem;
-      color: var(--text-light);
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: .3rem;
-    }
-    .exp-dur::before {
-      content: '';
-      width: 14px; height: 1px;
-      background: var(--rose-light);
+    .exp-sector {
       display: inline-block;
+      padding: .25rem .7rem;
+      font-size: .62rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-lt);
+      background: var(--accent-bg);
     }
-    .exp-list { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-    .exp-list li {
-      font-size: .82rem;
-      color: var(--text-mid);
-      line-height: 1.5;
+    .exp-main {}
+    .exp-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: -.01em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .exp-duties { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .exp-duties li {
+      font-size: .85rem;
+      color: var(--ink-mid);
+      line-height: 1.55;
       padding-left: 1.1rem;
       position: relative;
     }
-    .exp-list li::before {
+    .exp-duties li::before {
       content: '';
       position: absolute;
-      left: 0; top: .55em;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--rose);
+      left: 0; top: .58em;
+      width: 4px; height: 1px;
+      background: var(--accent);
     }
 
-    /* ── EDUCATION ── */
-    #formacion { background: var(--white); }
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 3rem;
+    /* ─── EDUCATION & LANGUAGES ─── */
+    #formacion-idiomas {
+      padding: 7rem 0;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-    .edu-card {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-      transition: box-shadow .3s;
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+
+    .edu-items { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--line); }
+    .edu-item {
+      padding: 1.5rem 1.6rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
     }
-    .edu-card:hover { box-shadow: var(--shadow); }
-    .edu-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: var(--rose-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-    .edu-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+    .edu-item:last-child { border-bottom: none; }
+    .edu-item h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
       font-weight: 400;
-      margin-bottom: .3rem;
+      margin-bottom: .2rem;
     }
-    .edu-sub { font-size: .75rem; color: var(--text-light); }
+    .edu-item p { font-size: .75rem; color: var(--ink-light); }
 
-    /* ── LANGUAGES ── */
-    #idiomas { background: var(--cream); }
-    .lang-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-    .lang-list { display: flex; flex-direction: column; gap: 1rem; }
-    .lang-row {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: box-shadow .3s;
-    }
-    .lang-row:hover { box-shadow: var(--shadow); }
-    .lang-left { display: flex; align-items: center; gap: .8rem; }
-    .lang-flag { font-size: 1.4rem; }
-    .lang-name { font-size: .9rem; font-weight: 500; }
-    .lang-pill {
-      padding: .3rem .9rem;
-      background: var(--beige);
-      border: 1px solid var(--rose-light);
-      border-radius: 50px;
-      font-size: .65rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--rose-dark);
+    .lang-items { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
+    .lang-item { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; }
+    .lang-name { font-size: .88rem; font-weight: 400; }
+    .lang-sub { font-size: .7rem; color: var(--ink-light); }
+    .lang-badge {
+      font-size: .62rem;
       font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: .3rem .8rem;
+      border: 1px solid var(--accent-lt);
+      background: var(--accent-bg);
     }
-    .skills-col { display: flex; flex-direction: column; gap: 1rem; }
-    .skill-row { display: flex; flex-direction: column; gap: .4rem; }
-    .skill-header { display: flex; justify-content: space-between; font-size: .8rem; color: var(--text-mid); }
-    .skill-bar-bg {
-      height: 4px;
-      background: var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .skill-bar-fill {
+    .lang-bar-wrap { grid-column: 1 / -1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    .lang-bar {
       height: 100%;
-      background: linear-gradient(to right, var(--rose), var(--nude));
-      border-radius: 4px;
+      background: var(--accent);
+      border-radius: 2px;
       width: 0;
-      transition: width 1.2s cubic-bezier(.25,.46,.45,.94);
+      transition: width 1.2s var(--ease);
     }
-    .skill-bar-fill.animated { width: var(--w); }
+    .lang-bar.go { width: var(--w); }
 
-    /* ── OTROS DATOS ── */
-    #otros { background: var(--white); }
+    /* Skills */
+    .skill-rows { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.3rem; }
+    .sk-row { display: flex; flex-direction: column; gap: .4rem; }
+    .sk-head { display: flex; justify-content: space-between; font-size: .78rem; color: var(--ink-mid); }
+    .sk-head span:last-child { color: var(--ink-light); font-size: .7rem; }
+    .sk-track { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    .sk-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--accent), var(--accent-lt));
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.2s var(--ease);
+    }
+    .sk-fill.go { width: var(--w); }
+
+    /* ─── DATOS ─── */
+    #datos { padding: 7rem 0; }
     .datos-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 3.5rem;
     }
-    @media (min-width: 768px) { .datos-grid { grid-template-columns: repeat(4, 1fr); } }
-    .dato-card {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.8rem 1.4rem;
-      text-align: center;
-      transition: box-shadow .3s, transform .3s;
-    }
-    .dato-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-    .dato-icon { font-size: 2rem; margin-bottom: .8rem; }
-    .dato-text {
-      font-size: .82rem;
-      color: var(--text-mid);
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    /* ── CONTACT ── */
-    #contacto {
-      background: var(--text);
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    #contacto::before {
-      content: '';
-      position: absolute;
-      top: -200px; left: 50%;
-      transform: translateX(-50%);
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,160,160,.15) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .contact-tag { color: var(--rose-light); }
-    #contacto .section-title { color: #fff; }
-    #contacto .section-desc { color: rgba(255,255,255,.6); margin: 0 auto 3rem; }
-    .contact-cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-    .contact-card {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      padding: 1.5rem 2rem;
+    .dato {
+      background: var(--bg);
+      padding: 2.2rem 1.8rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      min-width: 180px;
-      transition: background .3s;
+      gap: .6rem;
+      transition: background .2s;
     }
-    .contact-card:hover { background: rgba(255,255,255,.12); }
-    .contact-card-icon { font-size: 1.6rem; }
-    .contact-card-label {
-      font-size: .65rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.45);
+    .dato:hover { background: var(--surface); }
+    .dato-icon { font-size: 1.5rem; }
+    .dato-title { font-size: .82rem; font-weight: 500; color: var(--ink); }
+    .dato-sub { font-size: .75rem; color: var(--ink-light); line-height: 1.4; }
+
+    /* ─── CONTACT ─── */
+    #contacto {
+      background: var(--ink);
+      color: #fff;
+      padding: 7rem 0;
+      border-top: 1px solid #2a2a2a;
     }
-    .contact-card-value {
+    #contacto .section-label { color: var(--accent-lt); }
+    #contacto .rule { background: var(--accent-lt); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .contact-left p {
       font-size: .9rem;
-      font-weight: 500;
-      color: #fff;
+      color: rgba(255,255,255,.55);
+      line-height: 1.8;
+      margin-bottom: 2rem;
     }
-    .contact-card-value a { color: #fff; }
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+    .btn-wa-dark   { background: #1FAD53; color: #fff; }
+    .btn-wa-dark:hover { background: #178f44; }
+    .btn-ghost-lt  { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); }
+    .btn-ghost-lt:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+
+    .contact-right { display: flex; flex-direction: column; gap: 1px; border: 1px solid rgba(255,255,255,.08); }
+    .contact-row {
+      padding: 1.4rem 1.6rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
       gap: 1rem;
+      transition: background .2s;
     }
-    .btn-white {
-      background: rgba(255,255,255,.1);
-      color: #fff;
-      border: 1.5px solid rgba(255,255,255,.25);
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row:hover { background: rgba(255,255,255,.04); }
+    .contact-row-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .25rem; }
+    .contact-row-val { font-size: .9rem; color: rgba(255,255,255,.85); }
+    .contact-row-val a { color: inherit; text-decoration: none; }
+    .contact-row-val a:hover { color: var(--accent-lt); }
+    .contact-copy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.4);
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      background: none;
+      font-size: .7rem;
     }
-    .btn-white:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
+    .contact-copy:hover { color: #fff; border-color: rgba(255,255,255,.4); }
+    .contact-copy svg { width: 13px; height: 13px; fill: currentColor; }
 
     /* Social */
-    .social-row {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-top: 3rem;
-      padding-top: 3rem;
-      border-top: 1px solid rgba(255,255,255,.1);
-    }
-    .social-btn {
+    .social-strip {
       display: flex;
       align-items: center;
-      gap: .5rem;
-      padding: .6rem 1.3rem;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50px;
-      font-size: .72rem;
-      letter-spacing: .08em;
-      color: rgba(255,255,255,.7);
-      transition: color .25s, border-color .25s;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,.07);
     }
-    .social-btn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
-    .social-btn svg { width: 15px; height: 15px; fill: currentColor; }
+    .social-strip span { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .78rem;
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .social-link:hover { color: #fff; }
+    .social-link svg { width: 14px; height: 14px; fill: currentColor; }
 
-    /* ── FOOTER ── */
+    /* ─── FOOTER ─── */
     footer {
-      background: var(--text);
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 1.5rem 5vw;
+      background: #111;
+      padding: 1.4rem max(2rem, 5vw);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: .95rem;
-      color: rgba(255,255,255,.5);
-    }
-    .footer-brand span { color: var(--rose); }
-    .footer-copy { font-size: .72rem; color: rgba(255,255,255,.35); }
+    .foot-logo { font-family: var(--font-serif); font-size: .9rem; color: rgba(255,255,255,.35); }
+    .foot-logo i { color: var(--accent-lt); font-style: italic; }
+    .foot-copy { font-size: .68rem; color: rgba(255,255,255,.25); letter-spacing: .06em; }
 
-    /* ── ANIMATIONS ── */
-    .reveal {
+    /* ─── REVEAL ─── */
+    .r {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(28px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal.d1 { transition-delay: .1s; }
-    .reveal.d2 { transition-delay: .2s; }
-    .reveal.d3 { transition-delay: .3s; }
-    .reveal.d4 { transition-delay: .4s; }
+    .r.v { opacity: 1; transform: none; }
+    .r.d1 { transition-delay: .1s; }
+    .r.d2 { transition-delay: .2s; }
+    .r.d3 { transition-delay: .3s; }
+    .r.d4 { transition-delay: .4s; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      #hero {
-        grid-template-columns: 1fr;
-        padding-top: 100px;
-        padding-bottom: 3rem;
-        text-align: center;
-        gap: 2.5rem;
-      }
-      #hero::before, #hero::after { display: none; }
-      .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .hero-image { height: 300px; align-items: center; }
-      .hero-img-wrap { width: min(220px, 55vw); height: min(300px, 55vw); }
-      .hero-chip-1, .hero-chip-2 { display: none; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 60vw; min-height: 320px; border-right: none; }
+      .hero-left { border-right: none; border-bottom: 1px solid var(--line); padding: 5rem max(1.5rem, 4vw) 3.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .exp-grid { grid-template-columns: 1fr; }
-      .edu-grid { grid-template-columns: 1fr; }
-      .lang-layout { grid-template-columns: 1fr; gap: 2rem; }
-      section { padding: 4rem 5vw; }
-      .nav-links { display: none; }
+      .exp-row { grid-template-columns: 1fr; gap: 1rem; }
+      .two-col { grid-template-columns: 1fr; gap: 3.5rem; }
+      .datos-grid { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      section, #about, #experiencia, #formacion-idiomas, #datos, #contacto { padding: 5rem 0; }
     }
-    @media (max-width: 480px) {
-      .contact-cards { flex-direction: column; align-items: center; }
+    @media (max-width: 600px) {
+      .datos-grid { grid-template-columns: 1fr; }
+      .nav-menu li:not(:last-child) { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-brand">Dara <span>dos Santos</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">Sobre mí</a></li>
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <div class="nav-logo">Dara <b>dos Santos</b></div>
+  <ul class="nav-menu">
+    <li><a href="#about">Perfil</a></li>
     <li><a href="#experiencia">Experiencia</a></li>
-    <li><a href="#idiomas">Idiomas</a></li>
-    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    <li><a href="#formacion-idiomas">Formación</a></li>
+    <li><a href="#contacto" class="nav-pill">Contactar</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- ─── HERO ─── -->
 <section id="hero">
-  <div class="hero-text">
-    <div class="hero-badge">Disponible inmediatamente</div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Disponible de inmediato · Barcelona
+    </div>
     <h1 class="hero-name">
-      Dara<br>
-      <em>dos Santos</em>
+      Dara<span>dos Santos</span>
     </h1>
-    <p class="hero-headline">Atención al cliente, comercio y estética en Barcelona</p>
-    <p class="hero-sub">
-      Persona responsable, dinámica y con facilidad para trabajar en equipo. Busco una oportunidad laboral, preferiblemente en turno de tarde o noche, donde pueda seguir desarrollándome profesionalmente.
+    <p class="hero-desc">
+      Atención al cliente, comercio y estética en Barcelona. Persona responsable, dinámica y con facilidad para trabajar en equipo. Disponibilidad preferente en turno de tarde o noche.
     </p>
     <div class="hero-actions">
-      <a href="https://wa.me/34625242263" target="_blank" class="btn btn-whatsapp">
+      <a href="https://wa.me/34625242263" target="_blank" class="btn btn-wa">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         WhatsApp
       </a>
-      <a href="mailto:Dara2santos2004@gmail.com" class="btn btn-outline">
+      <a href="mailto:Dara2santos2004@gmail.com" class="btn btn-ghost">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Enviar email
+        Email
+      </a>
+      <a href="cv-dara-dos-santos.pdf" download class="btn btn-accent">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Descargar CV
       </a>
     </div>
   </div>
 
-  <div class="hero-image">
-    <div class="hero-img-wrap">
-      <img src="foto-dara.jpg" alt="Dara dos Santos" />
-    </div>
-    <div class="hero-chip hero-chip-1">
-      <span class="chip-icon">📍</span>
-      Barcelona, Centro
-    </div>
-    <div class="hero-chip hero-chip-2">
-      <span class="chip-icon">🌙</span>
-      Turno tarde / noche
+  <div class="hero-right">
+    <img src="foto-dara.jpg" alt="Dara dos Santos" class="hero-photo" />
+    <div class="hero-right-overlay"></div>
+    <div class="hero-meta-strip">
+      <div class="hero-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        Barcelona, Centro
+      </div>
+      <div class="hero-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        Turno tarde / noche
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── SOBRE MÍ ── -->
+<!-- ─── SOBRE MÍ ─── -->
 <section id="about">
-  <div class="section-tag reveal">Sobre mí</div>
-  <h2 class="section-title reveal d1">Una persona que da<br><em>el máximo</em></h2>
-  <div class="divider reveal d2"></div>
+  <div class="section-inner">
+    <div class="section-label r">Sobre mí</div>
+    <h2 class="section-heading r d1">Una profesional <em>comprometida</em></h2>
+    <div class="rule r d2"></div>
 
-  <div class="about-grid">
-    <div class="reveal d1">
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-num">22</div>
-          <div class="stat-lbl">Años</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-lbl">Idiomas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">13+</div>
-          <div class="stat-lbl">Meses de exp.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">BCN</div>
-          <div class="stat-lbl">Barcelona Centro</div>
+    <div class="about-grid">
+      <div class="r d1">
+        <div class="about-kpis">
+          <div class="kpi">
+            <div class="kpi-num">22</div>
+            <div class="kpi-lbl">Años<br>Barcelona</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num">13</div>
+            <div class="kpi-lbl">Meses de<br>experiencia</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num">3</div>
+            <div class="kpi-lbl">Idiomas<br>dominados</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-num">∞</div>
+            <div class="kpi-lbl">Ganas de<br>aprender</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="about-text reveal d2">
-      <p>
-        Soy Dara, tengo 22 años y vivo en Barcelona. Cuento con experiencia en atención al cliente, comercio y estética, lo que me ha dado una gran capacidad para relacionarme con las personas, adaptarme a distintos entornos de trabajo y cumplir con los objetivos del equipo.
-      </p>
-      <p>
-        Soy responsable, puntual y me implico de verdad en cada trabajo que hago. Me considero una persona motivada, con iniciativa y ganas de seguir aprendiendo. Me desenvuelvo bien tanto sola como en equipo, y tengo especial facilidad para tratar con el público.
-      </p>
-      <p>
-        Busco una oportunidad laboral estable o temporal en Barcelona donde pueda seguir desarrollándome. Mi disponibilidad es preferentemente en turno de tarde o noche, e incorporación inmediata.
-      </p>
-      <div class="about-tags">
-        <span class="tag">Responsable</span>
-        <span class="tag">Dinámica</span>
-        <span class="tag">Trabajo en equipo</span>
-        <span class="tag">Buena presencia</span>
-        <span class="tag">Motivada</span>
-        <span class="tag">Adaptable</span>
-        <span class="tag">Orientada al cliente</span>
-        <span class="tag">Incorporación inmediata</span>
+      <div class="about-body r d2">
+        <p>
+          Tengo 22 años y cuento con experiencia en atención al cliente, comercio y estética. Esa diversidad de entornos me ha dado una capacidad real de adaptación: sé relacionarme con cualquier tipo de público, cumplir con los ritmos y exigencias del trabajo, y integrarme rápidamente en un equipo nuevo.
+        </p>
+        <p>
+          Soy puntual, responsable y me implico de verdad en cada puesto. No busco un trabajo temporal para pasar el tiempo; busco un lugar donde aportar y crecer. Tengo disponibilidad inmediata y prefiero turno de tarde o noche, lo que me convierte en una candidata especialmente interesante para empleadores que necesiten cubrir esos horarios.
+        </p>
+        <p>
+          Hablo portugués y español como lenguas nativas, y catalán con fluidez, lo que me permite comunicarme sin barreras con clientes de cualquier procedencia en el contexto barcelonés.
+        </p>
+        <div class="about-chips">
+          <span class="chip">Responsable</span>
+          <span class="chip">Dinámica</span>
+          <span class="chip">Trabajo en equipo</span>
+          <span class="chip">Buena presencia</span>
+          <span class="chip">Aprendizaje rápido</span>
+          <span class="chip">Trato con el público</span>
+          <span class="chip">Turno tarde / noche</span>
+          <span class="chip">Incorporación inmediata</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── EXPERIENCIA ── -->
+<!-- ─── EXPERIENCIA ─── -->
 <section id="experiencia">
-  <div class="section-tag reveal">Trayectoria</div>
-  <h2 class="section-title reveal d1">Experiencia <em>laboral</em></h2>
-  <div class="divider reveal d2"></div>
+  <div class="section-inner">
+    <div class="section-label r">Trayectoria</div>
+    <h2 class="section-heading r d1">Experiencia <em>laboral</em></h2>
+    <div class="rule r d2"></div>
 
-  <div class="exp-grid">
-    <div class="exp-card reveal d1">
-      <div class="exp-emoji">👟</div>
-      <p class="exp-type">Comercio · Retail</p>
-      <h3 class="exp-title">Dependienta — Tienda de Calzado</h3>
-      <p class="exp-dur">2 meses</p>
-      <ul class="exp-list">
-        <li>Atención y asesoramiento al cliente</li>
-        <li>Cobro en caja y gestión de pagos</li>
-        <li>Reposición y organización de mercancía</li>
-        <li>Mantenimiento del orden e imagen de la tienda</li>
-      </ul>
-    </div>
+    <div class="exp-list">
+      <div class="exp-row r">
+        <div class="exp-meta">
+          <div class="exp-duration">2 meses</div>
+          <div class="exp-sector">Comercio</div>
+        </div>
+        <div class="exp-main">
+          <h3 class="exp-title">Dependienta — Tienda de calzado</h3>
+          <ul class="exp-duties">
+            <li>Atención y asesoramiento al cliente</li>
+            <li>Cobro en caja y gestión de pagos</li>
+            <li>Reposición y organización de mercancía</li>
+            <li>Mantenimiento del orden e imagen de la tienda</li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="exp-card reveal d2">
-      <div class="exp-emoji">📦</div>
-      <p class="exp-type">Logística · ETT</p>
-      <h3 class="exp-title">Operaria Industrial</h3>
-      <p class="exp-dur">5 meses</p>
-      <ul class="exp-list">
-        <li>Preparación y clasificación de mercancía</li>
-        <li>Apoyo en tareas de almacén y logística</li>
-        <li>Trabajo en equipo y cumplimiento de objetivos</li>
-      </ul>
-    </div>
+      <div class="exp-row r d1">
+        <div class="exp-meta">
+          <div class="exp-duration">5 meses</div>
+          <div class="exp-sector">Logística · ETT</div>
+        </div>
+        <div class="exp-main">
+          <h3 class="exp-title">Operaria industrial — ETT</h3>
+          <ul class="exp-duties">
+            <li>Preparación y clasificación de mercancía</li>
+            <li>Apoyo en tareas de almacén y logística</li>
+            <li>Trabajo en equipo y cumplimiento de objetivos</li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="exp-card reveal d3">
-      <div class="exp-emoji">✨</div>
-      <p class="exp-type">Estética · Brasil</p>
-      <h3 class="exp-title">Estilista de Pestañas</h3>
-      <p class="exp-dur">6 meses</p>
-      <ul class="exp-list">
-        <li>Aplicación de extensiones de pestañas</li>
-        <li>Atención personalizada a clientas</li>
-        <li>Gestión de citas y seguimiento de clientes</li>
-        <li>Cumplimiento de normas de higiene y calidad</li>
-      </ul>
+      <div class="exp-row r d2">
+        <div class="exp-meta">
+          <div class="exp-duration">6 meses</div>
+          <div class="exp-sector">Estética · Brasil</div>
+        </div>
+        <div class="exp-main">
+          <h3 class="exp-title">Estilista de pestañas</h3>
+          <ul class="exp-duties">
+            <li>Aplicación de extensiones de pestañas</li>
+            <li>Atención personalizada a clientas</li>
+            <li>Gestión de agenda y seguimiento de clientes</li>
+            <li>Cumplimiento de normas de higiene y calidad</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── FORMACIÓN ── -->
-<section id="formacion">
-  <div class="section-tag reveal">Educación</div>
-  <h2 class="section-title reveal d1"><em>Formación</em></h2>
-  <div class="divider reveal d2"></div>
+<!-- ─── FORMACIÓN + IDIOMAS ─── -->
+<section id="formacion-idiomas">
+  <div class="section-inner">
+    <div class="two-col">
 
-  <div class="edu-grid">
-    <div class="edu-card reveal d1">
-      <div class="edu-icon">🎓</div>
+      <!-- Formación -->
       <div>
-        <h3 class="edu-title">EUC en Comercio</h3>
-        <p class="edu-sub">Formación reglada · España</p>
+        <div class="section-label r">Educación</div>
+        <h2 class="section-heading r d1"><em>Formación</em></h2>
+        <div class="rule r d2"></div>
+
+        <div class="edu-items r d2">
+          <div class="edu-item">
+            <h4>EUC en Comercio</h4>
+            <p>Formación reglada · España</p>
+          </div>
+          <div class="edu-item">
+            <h4>Curso de Extensiones de Pestañas</h4>
+            <p>Formación especializada · Brasil</p>
+          </div>
+        </div>
+
+        <!-- Habilidades blandas -->
+        <div style="margin-top:3rem;">
+          <div class="section-label r" style="margin-top:0">Competencias</div>
+          <div class="skill-rows r d1">
+            <div class="sk-row">
+              <div class="sk-head"><span>Atención al cliente</span><span>Excelente</span></div>
+              <div class="sk-track"><div class="sk-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="sk-row">
+              <div class="sk-head"><span>Trabajo en equipo</span><span>Excelente</span></div>
+              <div class="sk-track"><div class="sk-fill" style="--w:93%"></div></div>
+            </div>
+            <div class="sk-row">
+              <div class="sk-head"><span>Adaptabilidad</span><span>Muy alta</span></div>
+              <div class="sk-track"><div class="sk-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="sk-row">
+              <div class="sk-head"><span>Responsabilidad</span><span>Muy alta</span></div>
+              <div class="sk-track"><div class="sk-fill" style="--w:95%"></div></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="edu-card reveal d2">
-      <div class="edu-icon">💅</div>
+
+      <!-- Idiomas -->
       <div>
-        <h3 class="edu-title">Curso de Extensiones de Pestañas</h3>
-        <p class="edu-sub">Formación especializada · Brasil</p>
+        <div class="section-label r">Comunicación</div>
+        <h2 class="section-heading r d1">Tres <em>idiomas</em></h2>
+        <div class="rule r d2"></div>
+
+        <div class="lang-items r d2">
+          <div class="lang-item">
+            <div>
+              <div class="lang-name">Portugués</div>
+              <div class="lang-sub">Lengua materna</div>
+            </div>
+            <div class="lang-badge">Nativo</div>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="--w:100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div>
+              <div class="lang-name">Español</div>
+              <div class="lang-sub">Lengua materna</div>
+            </div>
+            <div class="lang-badge">Nativo</div>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="--w:100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div>
+              <div class="lang-name">Catalán</div>
+              <div class="lang-sub">Nivel avanzado</div>
+            </div>
+            <div class="lang-badge">Fluido</div>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="--w:82%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── DATOS CLAVE ─── -->
+<section id="datos">
+  <div class="section-inner">
+    <div class="section-label r">Disponibilidad</div>
+    <h2 class="section-heading r d1">Datos <em>clave</em></h2>
+    <div class="rule r d2"></div>
+
+    <div class="datos-grid r d2">
+      <div class="dato">
+        <div class="dato-icon">🌙</div>
+        <div class="dato-title">Turno tarde / noche</div>
+        <div class="dato-sub">Disponibilidad preferente en horario de tarde y noche</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">⚡</div>
+        <div class="dato-title">Incorporación inmediata</div>
+        <div class="dato-sub">Lista para empezar desde el primer día</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">🤝</div>
+        <div class="dato-title">Trato excelente</div>
+        <div class="dato-sub">Experiencia contrastada en atención directa al público</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">📈</div>
+        <div class="dato-title">Aprendizaje rápido</div>
+        <div class="dato-sub">Capacidad de adaptación a nuevos entornos y procesos</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── IDIOMAS ── -->
-<section id="idiomas">
-  <div class="section-tag reveal">Comunicación</div>
-  <h2 class="section-title reveal d1">Tres <em>idiomas</em></h2>
-  <div class="divider reveal d2"></div>
-  <p class="section-desc reveal d2">Domino tres lenguas con fluidez, una ventaja clave para trabajar con todo tipo de clientes.</p>
-
-  <div class="lang-layout">
-    <div class="lang-list reveal d1">
-      <div class="lang-row">
-        <div class="lang-left">
-          <span class="lang-flag">🇧🇷</span>
-          <span class="lang-name">Portugués</span>
-        </div>
-        <span class="lang-pill">Nativo</span>
-      </div>
-      <div class="lang-row">
-        <div class="lang-left">
-          <span class="lang-flag">🇪🇸</span>
-          <span class="lang-name">Español</span>
-        </div>
-        <span class="lang-pill">Nativo</span>
-      </div>
-      <div class="lang-row">
-        <div class="lang-left">
-          <span class="lang-flag">🏴󠁥󠁳󠁣󠁴󠁿</span>
-          <span class="lang-name">Catalán</span>
-        </div>
-        <span class="lang-pill">Fluido</span>
-      </div>
-    </div>
-
-    <div class="skills-col reveal d2">
-      <div class="skill-row">
-        <div class="skill-header"><span>Atención al cliente</span><span>Excelente</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:95%"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-header"><span>Trabajo en equipo</span><span>Excelente</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:93%"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-header"><span>Adaptabilidad</span><span>Muy alta</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:90%"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-header"><span>Responsabilidad</span><span>Muy alta</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:95%"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-header"><span>Capacidad de aprendizaje</span><span>Alta</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:88%"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── OTROS DATOS ── -->
-<section id="otros">
-  <div class="section-tag reveal">Más sobre mí</div>
-  <h2 class="section-title reveal d1">Datos <em>clave</em></h2>
-  <div class="divider reveal d2"></div>
-
-  <div class="datos-grid">
-    <div class="dato-card reveal d1">
-      <div class="dato-icon">🌙</div>
-      <p class="dato-text">Disponibilidad turno<br><strong>tarde y noche</strong></p>
-    </div>
-    <div class="dato-card reveal d2">
-      <div class="dato-icon">⚡</div>
-      <p class="dato-text">Incorporación<br><strong>inmediata</strong></p>
-    </div>
-    <div class="dato-card reveal d3">
-      <div class="dato-icon">😊</div>
-      <p class="dato-text">Excelente<br><strong>atención al cliente</strong></p>
-    </div>
-    <div class="dato-card reveal d4">
-      <div class="dato-icon">📈</div>
-      <p class="dato-text">Capacidad de<br><strong>aprendizaje y adaptación</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACTO ── -->
+<!-- ─── CONTACTO ─── -->
 <section id="contacto">
-  <div class="section-tag contact-tag reveal">¿Tienes una oferta?</div>
-  <h2 class="section-title reveal d1">Hablemos<br><em>ahora mismo</em></h2>
-  <div class="divider" style="margin:1.2rem auto 2.5rem;background:var(--rose)"></div>
-  <p class="section-desc reveal d2">Estoy disponible para incorporarme de forma inmediata. Escríbeme y te respondo lo antes posible.</p>
+  <div class="section-inner">
+    <div class="section-label r">Contacto</div>
+    <h2 class="section-heading r d1" style="color:#fff">¿Tienes una <em>oferta?</em></h2>
+    <div class="rule r d2"></div>
 
-  <div class="contact-cards reveal d2">
-    <div class="contact-card">
-      <div class="contact-card-icon">📞</div>
-      <div class="contact-card-label">Teléfono</div>
-      <div class="contact-card-value"><a href="tel:+34625242263">625 242 263</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-card-icon">✉️</div>
-      <div class="contact-card-label">Email</div>
-      <div class="contact-card-value"><a href="mailto:Dara2santos2004@gmail.com">Dara2santos2004@gmail.com</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-card-icon">📍</div>
-      <div class="contact-card-label">Ubicación</div>
-      <div class="contact-card-value">Barcelona, Centro</div>
-    </div>
-  </div>
+    <div class="contact-layout">
+      <div class="contact-left r d1">
+        <p>
+          Estoy disponible para incorporarme de forma inmediata. Puedes contactarme directamente por WhatsApp, email o teléfono. Respondo en el mismo día.
+        </p>
+        <div class="contact-actions">
+          <a href="https://wa.me/34625242263" target="_blank" class="btn btn-wa-dark">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:Dara2santos2004@gmail.com" class="btn btn-ghost-lt">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Enviar email
+          </a>
+          <a href="cv-dara-dos-santos.pdf" download class="btn btn-ghost-lt">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Descargar CV
+          </a>
+        </div>
 
-  <div class="contact-actions reveal d3">
-    <a href="https://wa.me/34625242263" target="_blank" class="btn btn-whatsapp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Contactar por WhatsApp
-    </a>
-    <a href="mailto:Dara2santos2004@gmail.com" class="btn btn-white">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      Enviar email
-    </a>
-  </div>
+        <div class="social-strip">
+          <span>Redes</span>
+          <a href="https://instagram.com/dara2santos" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @dara2santos
+          </a>
+          <a href="https://tiktok.com/@dara2santos" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.26 8.26 0 004.83 1.56V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
+            @dara2santos
+          </a>
+        </div>
+      </div>
 
-  <div class="social-row reveal d4">
-    <a href="https://instagram.com/dara2santos" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      @dara2santos
-    </a>
-    <a href="https://tiktok.com/@dara2santos" target="_blank" class="social-btn">
-      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.26 8.26 0 004.83 1.56V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
-      @dara2santos
-    </a>
+      <div class="contact-right r d2">
+        <div class="contact-row">
+          <div>
+            <div class="contact-row-label">Teléfono / WhatsApp</div>
+            <div class="contact-row-val"><a href="tel:+34625242263">625 242 263</a></div>
+          </div>
+          <button class="contact-copy" onclick="navigator.clipboard.writeText('625242263')" title="Copiar">
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+        <div class="contact-row">
+          <div>
+            <div class="contact-row-label">Correo electrónico</div>
+            <div class="contact-row-val"><a href="mailto:Dara2santos2004@gmail.com">Dara2santos2004@gmail.com</a></div>
+          </div>
+          <button class="contact-copy" onclick="navigator.clipboard.writeText('Dara2santos2004@gmail.com')" title="Copiar">
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          </button>
+        </div>
+        <div class="contact-row">
+          <div>
+            <div class="contact-row-label">Ubicación</div>
+            <div class="contact-row-val">Barcelona, Centro</div>
+          </div>
+          <span></span>
+        </div>
+        <div class="contact-row">
+          <div>
+            <div class="contact-row-label">Disponibilidad</div>
+            <div class="contact-row-val">Inmediata · Tarde y noche</div>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-brand">Dara <span>dos Santos</span></div>
-  <div class="footer-copy">© 2026 · Barcelona</div>
+  <div class="foot-logo">Dara <i>dos Santos</i></div>
+  <div class="foot-copy">© 2026 · Barcelona</div>
 </footer>
 
 <script>
-  /* Nav scroll */
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), { passive: true });
+  /* Nav */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 30), { passive: true });
 
-  /* Reveal on scroll */
-  const revealObs = new IntersectionObserver(entries => {
+  /* Reveal */
+  const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        e.target.querySelectorAll('.skill-bar-fill').forEach(b => b.classList.add('animated'));
-      }
+      if (!e.isIntersecting) return;
+      e.target.classList.add('v');
+      e.target.querySelectorAll('.sk-fill, .lang-bar').forEach(b => b.classList.add('go'));
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => io.observe(el));
 
-  /* Skill bars standalone */
-  const barObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animated'); });
-  }, { threshold: 0.4 });
-  document.querySelectorAll('.skill-bar-fill').forEach(el => barObs.observe(el));
+  /* Bars triggered independently */
+  const barIO = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('go'); });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.sk-fill, .lang-bar').forEach(el => barIO.observe(el));
 </script>
 </body>
 </html>
