@@ -563,8 +563,28 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
       #hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 60vw; min-height: 320px; border-right: none; }
-      .hero-left { border-right: none; border-bottom: 1px solid var(--line); padding: 5rem max(1.5rem, 4vw) 3.5rem; }
+      /* Foto: altura generosa, cara centrada arriba, sin chips encima */
+      .hero-right {
+        height: 75vw;
+        min-height: 340px;
+        max-height: 480px;
+        border-right: none;
+        order: -1; /* foto primero en móvil */
+      }
+      .hero-photo { object-position: center 8%; }
+      /* Ocultar chips flotantes en móvil — van en la tira inferior */
+      .hero-meta-strip { display: none; }
+      /* Tira de info debajo de la foto */
+      .hero-info-mobile {
+        display: flex !important;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: .9rem max(1.5rem, 4vw);
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        flex-wrap: wrap;
+      }
+      .hero-left { border-right: none; border-bottom: 1px solid var(--line); padding: 3rem max(1.5rem, 4vw) 3rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .exp-row { grid-template-columns: 1fr; gap: 1rem; }
       .two-col { grid-template-columns: 1fr; gap: 3.5rem; }
@@ -576,6 +596,18 @@
       .datos-grid { grid-template-columns: 1fr; }
       .nav-menu li:not(:last-child) { display: none; }
     }
+    /* La tira mobile está oculta en desktop */
+    .hero-info-mobile { display: none; }
+    .hero-info-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--ink-mid);
+    }
+    .hero-info-item svg { width: 12px; height: 12px; fill: var(--accent); flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -633,6 +665,22 @@
         Turno tarde / noche
       </div>
     </div>
+  </div>
+
+  <!-- Tira de info solo visible en móvil, debajo de la foto -->
+  <div class="hero-info-mobile">
+    <span class="hero-info-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+      Barcelona, Centro
+    </span>
+    <span class="hero-info-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      Turno tarde / noche
+    </span>
+    <span class="hero-info-item">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      Disponible de inmediato
+    </span>
   </div>
 </section>
 
